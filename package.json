@@ -1,60 +1,63 @@
 {
-    "name": "bootstrap-compiler",
-    "version": "1.0.0",
-    "description": "Compile a custom Bootstrap (V5) build.",
-    "main": "src/lib/index.js",
-    "bin": {
-        "bootstrap-compiler": "./src/cli/index.js"
-    },
-    "keywords": [
-        "bootstrap",
-        "compiler",
-        "cli",
-        "sass",
-        "scss",
-        "css"
+  "name": "bootstrap-compiler",
+  "version": "1.0.1",
+  "description": "Compile a custom Bootstrap (V5) build.",
+  "main": "src/lib/index.js",
+  "bin": {
+    "bootstrap-compiler": "src/cli/index.js"
+  },
+  "keywords": [
+    "bootstrap",
+    "compiler",
+    "cli",
+    "sass",
+    "scss",
+    "css"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src tests",
+    "test:coverage": "npm test -- --coverage",
+    "test:badges": "npm run test:coverage  && make-coverage-badge --output-path ./badges/coverage.svg"
+  },
+  "author": "Matthew R Laue",
+  "homepage": "https://github.com/mattlaue/bootstrap-compiler",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattlaue/bootstrap-compiler.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattlaue/bootstrap-compiler/issues"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.0.0-alpha3",
+    "browser-sass": "^1.22.8",
+    "buffer": "^6.0.2",
+    "eslint": "^7.13.0",
+    "eslint-plugin-jest": "^24.1.3",
+    "jest": "^26.6.3",
+    "make-coverage-badge": "^1.2.0",
+    "process": "^0.11.10",
+    "raw-loader": "^4.0.2",
+    "require-context": "^1.1.0",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "yargs": "^16.1.1"
+  },
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "json-summary"
     ],
-    "scripts": {
-        "test": "jest",
-        "lint": "eslint src tests",
-        "test:coverage": "npm test -- --coverage",
-        "test:badges": "npm run test:coverage  && make-coverage-badge --output-path ./badges/coverage.svg"
-    },
-    "author": "Matthew R Laue",
-    "homepage": "https://github.com/mattlaue/bootstrap-compiler",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mattlaue/bootstrap-compiler.git"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/mattlaue/bootstrap-compiler/issues"
-    },
-    "devDependencies": {
-        "bootstrap": "^5.0.0-alpha3",
-        "browser-sass": "^1.22.8",
-        "buffer": "^6.0.2",
-        "eslint": "^7.13.0",
-        "eslint-plugin-jest": "^24.1.3",
-        "jest": "^26.6.3",
-        "make-coverage-badge": "^1.2.0",
-        "process": "^0.11.10",
-        "raw-loader": "^4.0.2",
-        "require-context": "^1.1.0",
-        "rimraf": "^3.0.2",
-        "webpack": "^5.6.0",
-        "webpack-cli": "^4.2.0"
-    },
-    "dependencies": {
-        "yargs": "^16.1.1"
-    },
-    "jest": {
-        "coverageReporters": [
-            "text",
-            "json-summary"
-        ],
-        "collectCoverageFrom": [
-            "<rootDir>/src/**/*.js"
-        ]
-    }
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.js"
+    ]
+  },
+  "directories": {
+    "test": "tests"
+  }
 }
